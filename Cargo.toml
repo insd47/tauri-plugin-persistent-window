@@ -1,0 +1,22 @@
+[package]
+name = "tauri-plugin-persistent-window"
+version = "0.1.0"
+authors = ["insd47"]
+description = "Persist Tauri windows across close: hide instead of destroying, then reopen from the tray (Windows/Linux) or dock (macOS)."
+edition = "2021"
+rust-version = "1.77.2"
+license = "MIT"
+readme = "README.md"
+keywords = ["tauri", "window", "tray", "dock", "background"]
+categories = ["gui", "api-bindings"]
+repository = "https://github.com/insd47/tauri-plugin-persistent-window"
+homepage = "https://github.com/insd47/tauri-plugin-persistent-window"
+exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+links = "tauri-plugin-persistent-window"
+
+[dependencies]
+tauri = { version = "2.11.2", features = ["tray-icon"] }
+thiserror = "2"
+
+[build-dependencies]
+tauri-plugin = { version = "2.6.2", features = ["build"] }
