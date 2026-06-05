@@ -15,8 +15,8 @@ const QUIT: &str = "persistent-window:quit";
 /// Linux note: tray *click* events are not delivered by most environments, so
 /// the menu item is the reliable reopen path there.
 pub fn build<R: Runtime>(app: &AppHandle<R>) -> crate::Result<()> {
-  let open = MenuItem::with_id(app, OPEN, "열기", true, None::<&str>)?;
-  let quit = MenuItem::with_id(app, QUIT, "종료", true, None::<&str>)?;
+  let open = MenuItem::with_id(app, OPEN, "Open", true, None::<&str>)?;
+  let quit = MenuItem::with_id(app, QUIT, "Quit", true, None::<&str>)?;
   let menu = Menu::with_items(app, &[&open, &quit])?;
 
   let mut builder = TrayIconBuilder::<R>::new()
